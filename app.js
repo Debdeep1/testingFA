@@ -20,7 +20,7 @@ require('./models/post')
 
 app.use(express.json())
 app.get('/',(req,res)=>{
-    console.log('home route')
+    res.status(200).send('home route')
 })
 app.use(require('./routes/auth'))
 app.use(require('./routes/posts'))
