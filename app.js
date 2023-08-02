@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const PORT = 5000
 const {MONGOURL}= require('./keys')
-
+const cors = require('cors')
 
 mongoose.connect(MONGOURL,{
     useNewUrlParser:true, useUnifiedTopology:true
@@ -18,7 +18,10 @@ mongoose.connection.on('error',(err)=>{
 require('./models/user')
 require('./models/post')
 
+app.use(cors())
+
 app.use(express.json())
+
 app.get('/',(req,res)=>{
     res.status(200).send('home route')
 })
