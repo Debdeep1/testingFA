@@ -19,6 +19,9 @@ require('./models/user')
 require('./models/post')
 
 app.use(express.json())
+app.get('/',(req,res)=>{
+    console.log('home route')
+})
 app.use(require('./routes/auth'))
 app.use(require('./routes/posts'))
 
