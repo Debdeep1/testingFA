@@ -20,6 +20,7 @@ require('./models/user')
 require('./models/post')
 
 app.use(cors())
+app.use(bodyParser.json());
 
 app.use(express.json())
 
