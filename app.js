@@ -23,7 +23,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get('/',(req,res)=>{
-    res.status(200).send('home route')
+    res.status(200).send('welcome back')
 })
 app.use(require('./routes/auth'))
 app.use(require('./routes/posts'))
